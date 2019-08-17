@@ -1,1 +1,63 @@
-<p>login works!</p>
+<div class="card">
+  <div style="height: 70px"></div>
+</div>
+
+<form [formGroup]="form" (submit)="login()" class="centered">
+  <div class="form-group">
+    <h2>Welcome!</h2>
+
+    <label for="email">Email</label>
+    <input
+      type="email"
+      name="email"
+      formControlName="email"
+      class="form-control"
+    />
+  </div>
+  <div class="form-group">
+    <label for="password">Password</label>
+    <input
+      type="password"
+      name="password"
+      formControlName="password"
+      class="form-control"
+    />
+  </div>
+  <div class="text-center">
+    <button (click)="login()" type="submit" class="btn btn-primary">
+      Login
+    </button>
+  </div>
+  <div class="authentication">
+    <button
+      type="button"
+      class="btn btn-primary btn-block"
+      (click)="tryFacebookLogin()"
+    >
+      Login with Facebook
+    </button>
+    <button
+      type="button"
+      class="btn btn-danger btn-block"
+      (click)="tryGoogleLogin()"
+    >
+      Login with Google
+    </button>
+    <button
+      id="twitter"
+      type="button"
+      class="btn btn-danger btn-block"
+      (click)="tryTwitterLogin()"
+    >
+      Login with Twitter
+    </button>
+  </div>
+  <a
+    class="nav-link text-center custom-link"
+    routerLinkActive="active"
+    [routerLinkActiveOptions]="{ exact: true }"
+    routerLink="/Signup"
+    >New to us? Register here</a
+  >
+  <i class="fas fa-users"></i>
+</form>
