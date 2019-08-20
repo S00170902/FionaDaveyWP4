@@ -1,1 +1,17 @@
+<div style="height: 500px"></div>
 <p>home works!</p>
+<button (click)="search()">click me</button>
+<div>
+  <table *ngIf="books.length">
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Author</th>
+      </tr>
+      <tr *ngFor="let book of books">
+        <td>{{ book.title }}</td>
+        <td>{{ book.authors }}</td>
+      </tr>
+    </thead>
+  </table>
+</div>
