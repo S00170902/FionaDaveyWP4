@@ -1,6 +1,6 @@
 <div style="height: 500px"></div>
-<p>home works!</p>
-<button (click)="search()">click me</button>
+<input type="text" [(ngModel)]="query" />
+<button (click)="search()">search</button>
 <div>
   <table *ngIf="books.length">
     <thead>
