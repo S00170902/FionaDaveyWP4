@@ -7,10 +7,12 @@ export interface ISerializer<T> {
 
 export class BookSerializer implements ISerializer<IBook> {
   fromJson(responseItem: any): IBook {
+    const id = responseItem.id;
     const vol = responseItem.volumeInfo;
     const dateYear = new Date(vol.publishedDate).getFullYear();
 
     return new IBook(
+      id || "",
       vol.title || "",
       vol.subtitle || "",
       (vol.authors && vol.authors.join(", ")) || "", // can be more, than 1 authors

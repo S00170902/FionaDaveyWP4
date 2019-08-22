@@ -1,5 +1,6 @@
 export class IBook {
   constructor(
+    public id: string,
     public title?: string,
     public subtitle?: string,
     public authors?: string,

@@ -20,6 +20,7 @@ export class HomeComponent implements OnInit {
     this._bookservice.search(this.query).subscribe(
       (result: IBook[]) => {
         this.books = result;
+        console.log(result);
       },
       error => (this.errorMessage = <any>error)
     );
