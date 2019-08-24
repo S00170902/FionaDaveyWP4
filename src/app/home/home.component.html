@@ -1,4 +1,4 @@
-<div style="height:50px"></div>
+<div style="height:300px"></div>
 <div class="card-body">
   <div class="input-group mb-3">
     <div class="col-md-4">
@@ -17,16 +17,9 @@
       <tr>
         <td>
           <img [src]="book.smallThumbnailUrl" alt="thumbnail" />
-          <h3>
-            <a
-              class="nav-link"
-              routerLinkActive="active"
-              [routerLinkActiveOptions]="{ exact: true }"
-              routerLink="/Details"
-              >{{ book.title }}</a
-            >
-          </h3>
+          <h3>{{ book.title }}</h3>
           <h4>{{ book.authors }}</h4>
+          <button (click)="loadBook(book.id)">Details</button>
         </td>
       </tr>
     </table>

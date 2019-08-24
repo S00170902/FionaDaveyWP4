@@ -6,6 +6,7 @@ import { AngularFireAuthModule } from "@angular/fire/auth";
 import { AngularFirestoreModule } from "@angular/fire/firestore";
 import { environment } from "src/environments/environment.prod";
 import { HttpClientModule } from "@angular/common/http";
+import { FontAwesomeModule } from "@fortawesome/angular-fontawesome";
 
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
@@ -13,7 +14,8 @@ import { HomeComponent } from "./home/home.component";
 import { NavbarComponent } from "./navbar/navbar.component";
 import { LoginComponent } from "./login/login.component";
 import { SignupComponent } from "./signup/signup.component";
-import { BookDetailsComponent } from './book-details/book-details.component';
+import { BookDetailsComponent } from "./book-details/book-details.component";
+import { StarRatingComponent } from "./shared/star-rating/star-rating.component";
 
 @NgModule({
   declarations: [
@@ -22,7 +24,8 @@ import { BookDetailsComponent } from './book-details/book-details.component';
     NavbarComponent,
     LoginComponent,
     SignupComponent,
-    BookDetailsComponent
+    BookDetailsComponent,
+    StarRatingComponent
   ],
   imports: [
     BrowserModule,
@@ -32,7 +35,8 @@ import { BookDetailsComponent } from './book-details/book-details.component';
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,
     AngularFirestoreModule,
-    HttpClientModule
+    HttpClientModule,
+    FontAwesomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]

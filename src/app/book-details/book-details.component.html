@@ -1,1 +1,7 @@
-<p>book-details works!</p>
+<div style="height: 60px"></div>
+<h1>{{ this.book.title }}</h1>
+<h2>{{ this.book.subtitle }}</h2>
+<h3>by {{ this.book.authors }}</h3>
+<img [src]="this.book.coverUrl" alt="book cover" />
+<app-star-rating [rating]="this.book.rating"></app-star-rating>
+<div [innerHTML]="this.book.description"></div>

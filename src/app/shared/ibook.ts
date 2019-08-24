@@ -11,6 +11,8 @@ export class IBook {
     public infoLink?: string,
     public averageRating?: number | null,
     public categories?: string[],
-    public smallThumbnailUrl?: string
+    public smallThumbnailUrl?: string,
+    public coverUrl?: string,
+    public rating?: number
   ) {}
 }

@@ -26,19 +26,20 @@ export class BookService {
   }
 
   getBook(id: string) {
-    const params = new HttpParams()
-      .set("?projection", "lite")
-      .set("key", this.apiKey);
+    const params = new HttpParams().set("?key", this.apiKey);
+    console.log(this.url + "/" + id + params);
     return this._http
       .get(this.url + "/" + id + params)
-      .pipe(
-        map((data: any) =>
-          data.items ? this.convertCollection(data.items) : []
-        )
-      );
+      .pipe(map((data: any) => (data ? this.convertBook(data) : [])));
   }
 
   private convertCollection(collection: any[]): IBook[] {
+    console.log(collection);
     return collection.map(item => this.bookConverter.fromJson(item));
+  }
+
+  private convertBook(collection: any): IBook {
+    console.log(collection);
+    return this.bookConverter.fromJson(collection);
   }
 }

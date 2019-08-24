@@ -23,7 +23,9 @@ export class BookSerializer implements ISerializer<IBook> {
       vol.infoLink || "",
       vol.averageRating || null,
       vol.categories || "",
-      (vol.imageLinks && vol.imageLinks.smallThumbnail) || ""
+      (vol.imageLinks && vol.imageLinks.smallThumbnail) || "",
+      (vol.imageLinks && vol.imageLinks.small) || "",
+      vol.averageRating || ""
     );
   }
 

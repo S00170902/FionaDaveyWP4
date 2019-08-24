@@ -1,6 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { BookService } from "../service/book.service";
 import { IBook } from "../shared/ibook";
+import { Router, ActivatedRoute } from "@angular/router";
 
 @Component({
   selector: "app-home",
@@ -12,7 +13,11 @@ export class HomeComponent implements OnInit {
   errorMessage: string;
   query: string;
 
-  constructor(private _bookservice: BookService) {}
+  constructor(
+    private _bookservice: BookService,
+    private _router: Router,
+    private _route: ActivatedRoute
+  ) {}
 
   ngOnInit() {}
 
@@ -24,5 +29,9 @@ export class HomeComponent implements OnInit {
       },
       error => (this.errorMessage = <any>error)
     );
+  }
+
+  loadBook(id) {
+    this._router.navigate(["Details" + "/" + id]);
   }
 }

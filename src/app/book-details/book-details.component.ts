@@ -1,5 +1,7 @@
-import { Component, OnInit, Input } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
 import { IBook } from "../shared/ibook";
+import { ActivatedRoute } from "@angular/router";
+import { BookService } from "../service/book.service";
 
 @Component({
   selector: "app-book-details",
@@ -7,9 +9,24 @@ import { IBook } from "../shared/ibook";
   styleUrls: ["./book-details.component.css"]
 })
 export class BookDetailsComponent implements OnInit {
-  @Input() book: IBook;
+  id: string;
+  book: IBook;
+  errorMessage: string;
 
-  constructor() {}
+  constructor(
+    private _activatedRoute: ActivatedRoute,
+    private _bookService: BookService
+  ) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.id = this._activatedRoute.snapshot.paramMap.get("id");
+    console.log(this.id);
+    this._bookService.getBook(this.id).subscribe(
+      (result: IBook) => {
+        this.book = result;
+        console.log(result);
+      },
+      error => (this.errorMessage = <any>error)
+    );
+  }
 }
