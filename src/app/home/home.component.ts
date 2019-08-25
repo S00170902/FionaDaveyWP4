@@ -2,6 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { BookService } from "../service/book.service";
 import { IBook } from "../shared/ibook";
 import { Router, ActivatedRoute } from "@angular/router";
+import { faPlusCircle } from "@fortawesome/free-solid-svg-icons";
 
 @Component({
   selector: "app-home",
@@ -12,6 +13,7 @@ export class HomeComponent implements OnInit {
   books: IBook[] = [];
   errorMessage: string;
   query: string;
+  plusCircle = faPlusCircle;
 
   constructor(
     private _bookservice: BookService,

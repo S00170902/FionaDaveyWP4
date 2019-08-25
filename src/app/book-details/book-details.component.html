@@ -2,6 +2,12 @@
 <h1>{{ this.book.title }}</h1>
 <h2>{{ this.book.subtitle }}</h2>
 <h3>by {{ this.book.authors }}</h3>
-<img [src]="this.book.coverUrl" alt="book cover" />
+<div *ngIf="this.book.coverUrl">
+  <img [src]="this.book.coverUrl" alt="book cover" />
+</div>
+<div *ngIf="!this.book.coverUrl">
+  <img [src]="this.book.smallThumbnailUrl" alt="book cover" />
+</div>
 <app-star-rating [rating]="this.book.rating"></app-star-rating>
 <div [innerHTML]="this.book.description"></div>
+<app-review [reviews]="this.bookReviews" [id]="this.book.id"></app-review>

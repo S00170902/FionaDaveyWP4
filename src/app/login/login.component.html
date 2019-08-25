@@ -1,6 +1,4 @@
-<div class="card">
-  <div style="height: 70px"></div>
-</div>
+<div style="height: 60px"></div>
 
 <form [formGroup]="form" (submit)="login()" class="centered">
   <div class="form-group">
@@ -28,28 +26,9 @@
       Login
     </button>
   </div>
-  <div class="authentication">
-    <button
-      type="button"
-      class="btn btn-primary btn-block"
-      (click)="tryFacebookLogin()"
-    >
-      Login with Facebook
-    </button>
-    <button
-      type="button"
-      class="btn btn-danger btn-block"
-      (click)="tryGoogleLogin()"
-    >
+  <div class="authentication text-center">
+    <button type="button" class="btn btn-danger" (click)="tryGoogleLogin()">
       Login with Google
-    </button>
-    <button
-      id="twitter"
-      type="button"
-      class="btn btn-danger btn-block"
-      (click)="tryTwitterLogin()"
-    >
-      Login with Twitter
     </button>
   </div>
   <a

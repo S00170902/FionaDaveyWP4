@@ -1,4 +1,4 @@
-<div style="height:300px"></div>
+<div style="height:60px"></div>
 <div class="card-body">
   <div class="input-group mb-3">
     <div class="col-md-4">
@@ -16,10 +16,13 @@
     <table class="table" *ngFor="let book of books">
       <tr>
         <td>
+          <!-- <button><fa-icon [icon]="plusCircle"></fa-icon></button> -->
           <img [src]="book.smallThumbnailUrl" alt="thumbnail" />
           <h3>{{ book.title }}</h3>
           <h4>{{ book.authors }}</h4>
-          <button (click)="loadBook(book.id)">Details</button>
+          <button class="btn-primary" (click)="loadBook(book.id)">
+            Details
+          </button>
         </td>
       </tr>
     </table>

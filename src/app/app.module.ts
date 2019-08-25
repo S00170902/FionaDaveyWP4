@@ -16,6 +16,8 @@ import { LoginComponent } from "./login/login.component";
 import { SignupComponent } from "./signup/signup.component";
 import { BookDetailsComponent } from "./book-details/book-details.component";
 import { StarRatingComponent } from "./shared/star-rating/star-rating.component";
+import { ReviewComponent } from './review/review.component';
+import { AddReviewComponent } from './add-review/add-review.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,9 @@ import { StarRatingComponent } from "./shared/star-rating/star-rating.component"
     LoginComponent,
     SignupComponent,
     BookDetailsComponent,
-    StarRatingComponent
+    StarRatingComponent,
+    ReviewComponent,
+    AddReviewComponent
   ],
   imports: [
     BrowserModule,

@@ -2,6 +2,8 @@ import { Component, OnInit } from "@angular/core";
 import { IBook } from "../shared/ibook";
 import { ActivatedRoute } from "@angular/router";
 import { BookService } from "../service/book.service";
+import { IReview } from "../shared/ireview";
+import { ReviewService } from "../service/review.service";
 
 @Component({
   selector: "app-book-details",
@@ -11,11 +13,14 @@ import { BookService } from "../service/book.service";
 export class BookDetailsComponent implements OnInit {
   id: string;
   book: IBook;
+  reviews: IReview[] = [];
+  bookReviews: IReview[] = [];
   errorMessage: string;
 
   constructor(
     private _activatedRoute: ActivatedRoute,
-    private _bookService: BookService
+    private _bookService: BookService,
+    private _reviewService: ReviewService
   ) {}
 
   ngOnInit() {
@@ -28,5 +33,10 @@ export class BookDetailsComponent implements OnInit {
       },
       error => (this.errorMessage = <any>error)
     );
+
+    this._reviewService.getReviews().subscribe((result: IReview[]) => {
+      this.reviews = result;
+      this.bookReviews = this.reviews.filter(r => r.bookId === this.id);
+    });
   }
 }

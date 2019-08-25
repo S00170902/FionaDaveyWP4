@@ -1,0 +1,29 @@
+<form class="centered" style="margin: 20px">
+  <div class="form-group">
+    <h2>Add Review</h2>
+  </div>
+  <div class="form-group">
+    <label for="rating">Star Rating</label>
+    <input
+      [(ngModel)]="rating"
+      name="rating"
+      type="number"
+      style="width: 100px"
+      class="form-control"
+    />
+  </div>
+  <div class="form-group">
+    <input
+      type="text"
+      [(ngModel)]="reviewText"
+      name="reviewText"
+      placeholder="Enter your review"
+      class="form-control"
+    />
+  </div>
+  <div class="centered">
+    <button (click)="submit()" type="submit" class="btn btn-primary">
+      Submit
+    </button>
+  </div>
+</form>

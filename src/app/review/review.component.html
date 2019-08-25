@@ -1,0 +1,10 @@
+<div style="height:60px"></div>
+<h2>Reviews</h2>
+<div *ngIf="reviews.length">
+  <div *ngFor="let r of reviews">
+    <app-star-rating [rating]="r.starRating"></app-star-rating>
+    <p>{{ r.review }}</p>
+    <h5>{{ r.displayName }}</h5>
+  </div>
+</div>
+<button class="btn-primary" (click)="addReview()">Create Review</button>
