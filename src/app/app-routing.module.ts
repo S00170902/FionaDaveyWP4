@@ -6,6 +6,7 @@ import { SignupComponent } from "./signup/signup.component";
 import { BookDetailsComponent } from "./book-details/book-details.component";
 import { AuthGuard } from "./service/auth.guard";
 import { AddReviewComponent } from "./add-review/add-review.component";
+import { ReviewComponent } from "./review/review.component";
 
 const routes: Routes = [
   { path: "Home", component: HomeComponent, canActivate: [AuthGuard] },
@@ -21,6 +22,7 @@ const routes: Routes = [
     component: AddReviewComponent,
     canActivate: [AuthGuard]
   },
+  { path: "Reviews", component: ReviewComponent, canActivate: [AuthGuard] },
   { path: "", redirectTo: "Login", pathMatch: "full" }
 ];
 

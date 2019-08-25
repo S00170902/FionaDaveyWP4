@@ -7,4 +7,6 @@
     <h5>{{ r.displayName }}</h5>
   </div>
 </div>
-<button class="btn-primary" (click)="addReview()">Create Review</button>
+<button *ngIf="this.id" class="btn-primary" (click)="addReview()">
+  Create Review
+</button>

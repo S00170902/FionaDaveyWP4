@@ -3,13 +3,22 @@
 
   <div class="collapse navbar-collapse show" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item">
+      <li class="nav-item" *ngIf="userLoggedIn()">
         <a
           class="nav-link"
           routerLinkActive="active"
           [routerLinkActiveOptions]="{ exact: true }"
           routerLink="/Home"
           >Home</a
+        >
+      </li>
+      <li class="nav-item" *ngIf="userLoggedIn()">
+        <a
+          class="nav-link"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }"
+          routerLink="/Reviews"
+          >My Reviews</a
         >
       </li>
       <li class="nav-item" *ngIf="!userLoggedIn()">
